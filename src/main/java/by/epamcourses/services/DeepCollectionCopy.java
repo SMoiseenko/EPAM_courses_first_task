@@ -1,4 +1,4 @@
-package by.epamcourses.actions;
+package by.epamcourses.services;
 
 import java.util.ArrayList;
 import java.util.Iterator;

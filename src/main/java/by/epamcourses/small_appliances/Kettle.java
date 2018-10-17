@@ -3,11 +3,9 @@ package by.epamcourses.small_appliances;
 public class Kettle extends SmallAppliance {
     static final String NAME = "Kettle";
 
-    public Kettle() {
-    }
-
-    public Kettle(String model, int powerConsumption) {
+    public Kettle(String model, String brand, int powerConsumption) {
 	this.model = model;
+	this.brand = brand;
 	this.powerСonsumption = powerConsumption;
     }
 

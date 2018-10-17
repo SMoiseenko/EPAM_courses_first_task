@@ -1,4 +1,4 @@
-package by.epamcourses.actions;
+package by.epamcourses.services;
 
 import by.epamcourses.home_appliances.HomeAppliances;
 

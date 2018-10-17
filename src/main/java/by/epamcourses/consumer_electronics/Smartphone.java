@@ -3,11 +3,9 @@ package by.epamcourses.consumer_electronics;
 public class Smartphone extends ConsumerElectronics {
     static final String NAME = "Smartphone";
 
-    public Smartphone() {
-    }
-
-    public Smartphone(String model, int powerConsumption) {
+    public Smartphone(String model, String brand, int powerConsumption) {
 	this.model = model;
+	this.brand = brand;
 	this.powerСonsumption = powerConsumption;
     }
 

@@ -4,8 +4,9 @@ public class WashingMachine extends BigAppliance {
 
     static final String NAME = "Washing machine";
 
-    public WashingMachine(String model, int powerConsumption) {
+    public WashingMachine(String model, String brand, int powerConsumption) {
 	this.model = model;
+	this.brand = brand;
 	this.powerСonsumption = powerConsumption;
     }
 

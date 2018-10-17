@@ -3,11 +3,9 @@ package by.epamcourses.consumer_electronics;
 public class WiFiRouter extends ConsumerElectronics {
     static final String NAME = "WiFi Router";
 
-    public WiFiRouter() {
-    }
-
-    public WiFiRouter(String model, int powerConsumption) {
+    public WiFiRouter(String model, String brand, int powerConsumption) {
 	this.model = model;
+	this.brand = brand;
 	this.powerСonsumption = powerConsumption;
     }
 

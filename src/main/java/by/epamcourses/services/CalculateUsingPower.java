@@ -1,4 +1,4 @@
-package by.epamcourses.actions;
+package by.epamcourses.services;
 
 import by.epamcourses.home_appliances.HomeAppliances;
 
@@ -16,6 +16,5 @@ public class CalculateUsingPower {
 	} else {
 	    System.out.println("All apliances switches OFF. No any power consumption.\n");
 	}
-
     }
 }

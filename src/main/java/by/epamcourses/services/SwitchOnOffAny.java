@@ -1,4 +1,4 @@
-package by.epamcourses.actions;
+package by.epamcourses.services;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -3,11 +3,9 @@ package by.epamcourses.small_appliances;
 public class Toaster extends SmallAppliance {
     static final String NAME = "Toaster";
 
-    public Toaster() {
-    }
-
-    public Toaster(String model, int powerConsumption) {
+    public Toaster(String model, String brand, int powerConsumption) {
 	this.model = model;
+	this.brand = brand;
 	this.powerСonsumption = powerConsumption;
     }
 

@@ -3,11 +3,9 @@ package by.epamcourses.consumer_electronics;
 public class Television extends ConsumerElectronics {
     static final String NAME = "Television";
 
-    public Television() {
-    }
-
-    public Television(String model, int powerConsumption) {
+    public Television(String model, String brand, int powerConsumption) {
 	this.model = model;
+	this.brand = brand;
 	this.powerСonsumption = powerConsumption;
     }
 

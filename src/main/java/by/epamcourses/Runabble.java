@@ -1,8 +1,8 @@
 package by.epamcourses;
 
-import by.epamcourses.actions.DeepCollectionCopy;
-import by.epamcourses.actions.Initializer;
-import by.epamcourses.actions.MainMenu;
+import by.epamcourses.services.DeepCollectionCopy;
+import by.epamcourses.services.Initializer;
+import by.epamcourses.services.MainMenu;
 
 public class Runabble {
 

@@ -1,32 +1,26 @@
 package by.epamcourses.home_appliances;
 
 public abstract class HomeAppliances implements Comparable<HomeAppliances>, Cloneable {
+    protected String brand;
     protected String model;
     protected int powerСonsumption;
     protected boolean powerStatus = false;
-
-    public String getPowerStatus() {
-	if (powerStatus) {
-	    return "ON";
-	} else
-	    return "OFF";
-    }
-
-    public void setPowerStatus(boolean powerStatus) {
-	this.powerStatus = powerStatus;
-    }
 
     public String getModel() {
 	return model;
     }
 
-    public abstract String getType();
-
-    public abstract String getName();
+    public String getBrandl() {
+	return brand;
+    }
 
     public int getPowerСonsumption() {
 	return powerСonsumption;
     }
+
+    public abstract String getType();
+
+    public abstract String getName();
 
     public int compareTo(HomeAppliances pow) {
 	return (powerСonsumption - pow.getPowerСonsumption());

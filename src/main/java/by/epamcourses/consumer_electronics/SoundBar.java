@@ -3,11 +3,9 @@ package by.epamcourses.consumer_electronics;
 public class SoundBar extends ConsumerElectronics {
     static final String NAME = "Sound Bar";
 
-    public SoundBar() {
-    }
-
-    public SoundBar(String model, int powerConsumption) {
+    public SoundBar(String model, String brand, int powerConsumption) {
 	this.model = model;
+	this.brand = brand;
 	this.powerСonsumption = powerConsumption;
     }
 
