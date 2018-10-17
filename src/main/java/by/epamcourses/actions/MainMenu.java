@@ -24,15 +24,18 @@ public class MainMenu {
 
 	    try {
 		choice = scanner.nextInt();
+
 	    } catch (InputMismatchException e) {
-		System.out.println("\nWrong data! Make right choice.\n");
-		scanner.nextLine();
+		System.err.println("\nWrong data! Make right choice.\n");
+		System.out.println(scanner.nextLine()); // put in log
+		// scanner.nextLine();
 		choice = -1;
 	    }
 
 	    switch (choice) {
-	    case -1:
-		break;
+	    /*
+	     * case -1: break; //why i wrote it???
+	     */
 	    case 1:
 		ShowAllAppliance.showAllAppliance();
 
