@@ -41,7 +41,7 @@ public abstract class HomeAppliances implements Comparable<HomeAppliances>, Clon
 	return (powerСonsumption - pow.getPowerСonsumption());
     }
 
-    public boolean getPowerStatus() {
+    public boolean isPowerStatus() {
 	return powerStatus;
     }
 

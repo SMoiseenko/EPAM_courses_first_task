@@ -8,16 +8,18 @@ public class SwitchOnSomeAppliances {
 
     public static ArrayList<HomeAppliances> swichedOn(ArrayList<HomeAppliances> flatAppliances, int[] switchThis) {
 	ArrayList<HomeAppliances> switchedApplianceList = new ArrayList<>();
-	for (int i = 0; i < switchThis.length; i++) {
+
+	int a = 0;
+	for (int pos : switchThis) {
 	    try {
-		// switchedApplianceList.add(flatAppliances.get(switchThis[i]));
-		// switchedApplianceList.get(i).setPowerStatus(true);
-		flatAppliances.get(switchThis[i]).setPowerStatus(true);
+		switchedApplianceList.add(flatAppliances.get(pos));
+		switchedApplianceList.get(a).setPowerStatus(true);
+		++a;
 	    } catch (IndexOutOfBoundsException e) {
-		System.err.println(switchThis[i] + " -  no such element");
+		System.err.println(pos + " -  no such element");
 	    }
 
 	}
-	return flatAppliances;
+	return switchedApplianceList;
     }
 }

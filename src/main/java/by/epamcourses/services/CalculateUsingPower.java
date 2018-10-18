@@ -9,7 +9,7 @@ public class CalculateUsingPower {
     public static int calculateUsingPower(ArrayList<HomeAppliances> homeAppliances) {
 	int powCons = 0;
 	for (HomeAppliances aList : homeAppliances) {
-	    if (aList.getPowerStatus() == true) {
+	    if (aList.isPowerStatus() == true) {
 		powCons += aList.getPowerСonsumption();
 	    }
 	}

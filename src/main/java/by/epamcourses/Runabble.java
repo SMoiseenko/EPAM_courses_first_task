@@ -40,6 +40,11 @@ public class Runabble {
 	    System.out.println(dev);
 	}
 	System.out.println("*******************************");
+	for (HomeAppliances dev : swOn) {
+	    System.out.println(dev);
+	}
+
+	System.out.println("*******************************");
 
 	System.out.println(CalculateUsingPower.calculateUsingPower(swOn) + " W");
 

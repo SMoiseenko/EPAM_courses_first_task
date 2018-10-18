@@ -15,7 +15,7 @@ public abstract class SmallAppliance extends HomeAppliances {
 
     @Override
     public String toString() {
-	if (getPowerStatus()) {
+	if (isPowerStatus()) {
 	    return super.toString() + "(" + TYPE + ")" + " --- ON";
 	} else {
 	    return super.toString() + "(" + TYPE + ")" + " --- OFF";
