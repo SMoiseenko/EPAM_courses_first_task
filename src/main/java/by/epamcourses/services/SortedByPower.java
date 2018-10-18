@@ -7,19 +7,11 @@ import by.epamcourses.data.HomeAppliances;
 
 public class SortedByPower {
 
-    public static void sortedByPower() {
+    public static ArrayList<HomeAppliances> sortedByPower(ArrayList<HomeAppliances> sortMe) {
 
-	ArrayList<HomeAppliances> sortedByPowerAppliances = new ArrayList<HomeAppliances>();
+	Collections.sort(sortMe);
 
-	sortedByPowerAppliances.addAll(0, Initializer.getHomeAppliancesList());
-	Collections.sort(sortedByPowerAppliances);
-	System.out.println("Sorted collection By power consumption:\n");
-	for (int i = 0; i < sortedByPowerAppliances.size(); ++i) {
-	    System.out.println((i + 1) + ". " + sortedByPowerAppliances.get(i).getName() + " "
-		    + sortedByPowerAppliances.get(i).getModel() + " "
-		    + sortedByPowerAppliances.get(i).getPowerСonsumption() + " W");
-	}
-	System.out.println("");
+	return sortMe;
     }
 
 }

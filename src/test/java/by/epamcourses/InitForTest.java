@@ -16,44 +16,9 @@ import by.epamcourses.data.small_appliances.Kettle;
 import by.epamcourses.data.small_appliances.Toaster;
 import by.epamcourses.data.small_appliances.VacuumCleaner;
 import by.epamcourses.data.small_appliances.Сhandelier;
-import by.epamcourses.services.CalculateUsingPower;
-import by.epamcourses.services.SortedByPower;
-import by.epamcourses.services.SwitchOnSomeAppliances;;
 
-public class Runabble {
-
-    public static void main(String[] args) {
-
-	Runabble startHere = new Runabble();
-	ArrayList<HomeAppliances> flatList = startHere.initArrayList();
-	ArrayList<HomeAppliances> swOn;
-	ArrayList<HomeAppliances> powCalc;
-
-	for (HomeAppliances dev : flatList) {
-	    System.out.println(dev);
-	}
-	System.out.println("*******************************");
-
-	int[] sw = { 0, 1, 30, 19, 18, 128, -500 };
-	swOn = SwitchOnSomeAppliances.swichedOn(flatList, sw);
-	for (HomeAppliances dev : swOn) {
-	    System.out.println(dev);
-	}
-	System.out.println("*******************************");
-
-	System.out.println(CalculateUsingPower.calculateUsingPower(swOn) + " W");
-
-	System.out.println("*******************************");
-
-	for (HomeAppliances dev : SortedByPower.sortedByPower(flatList)) {
-	    System.out.println(dev);
-	}
-
-	System.out.println("*******************************");
-
-    }
-
-    public ArrayList<HomeAppliances> initArrayList() {
+public class InitForTest {
+    public static ArrayList<HomeAppliances> initArrayList() {
 	ArrayList<HomeAppliances> allInFlat = new ArrayList<>();
 	allInFlat.add(new Fridge("ATLANT", "ХМ 4307-000", 800));
 	allInFlat.add(new Fridge("LG", "GA-M429SARZ", 550));
@@ -77,4 +42,5 @@ public class Runabble {
 	allInFlat.add(new WiFiRouter("Zyxel", "Keenetic 4G III", 45));
 	return allInFlat;
     }
+
 }
