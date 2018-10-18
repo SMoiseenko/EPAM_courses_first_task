@@ -1,5 +1,5 @@
 package by.epamcourses;
-
+///configure git
 import by.epamcourses.services.DeepCollectionCopy;
 import by.epamcourses.services.Initializer;
 import by.epamcourses.services.MainMenu;
