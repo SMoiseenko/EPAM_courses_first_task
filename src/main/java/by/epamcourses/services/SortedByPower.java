@@ -3,7 +3,7 @@ package by.epamcourses.services;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import by.epamcourses.home_appliances.HomeAppliances;
+import by.epamcourses.data.HomeAppliances;
 
 public class SortedByPower {
 

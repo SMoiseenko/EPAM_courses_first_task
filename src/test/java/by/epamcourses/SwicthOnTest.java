@@ -2,20 +2,20 @@ package by.epamcourses;
 
 import org.testng.annotations.Test;
 
-import by.epamcourses.big_appliances.Cooker;
-import by.epamcourses.big_appliances.Fridge;
-import by.epamcourses.big_appliances.RangeHood;
-import by.epamcourses.big_appliances.WashingMachine;
-import by.epamcourses.consumer_electronics.Laptop;
-import by.epamcourses.consumer_electronics.Smartphone;
-import by.epamcourses.consumer_electronics.SoundBar;
-import by.epamcourses.consumer_electronics.Television;
-import by.epamcourses.consumer_electronics.WiFiRouter;
-import by.epamcourses.home_appliances.HomeAppliances;
-import by.epamcourses.small_appliances.Kettle;
-import by.epamcourses.small_appliances.Toaster;
-import by.epamcourses.small_appliances.VacuumCleaner;
-import by.epamcourses.small_appliances.Сhandelier;
+import by.epamcourses.data.HomeAppliances;
+import by.epamcourses.data.big_appliances.Cooker;
+import by.epamcourses.data.big_appliances.Fridge;
+import by.epamcourses.data.big_appliances.RangeHood;
+import by.epamcourses.data.big_appliances.WashingMachine;
+import by.epamcourses.data.consumer_electronics.Laptop;
+import by.epamcourses.data.consumer_electronics.Smartphone;
+import by.epamcourses.data.consumer_electronics.SoundBar;
+import by.epamcourses.data.consumer_electronics.Television;
+import by.epamcourses.data.consumer_electronics.WiFiRouter;
+import by.epamcourses.data.small_appliances.Kettle;
+import by.epamcourses.data.small_appliances.Toaster;
+import by.epamcourses.data.small_appliances.VacuumCleaner;
+import by.epamcourses.data.small_appliances.Сhandelier;
 
 public class SwicthOnTest {
 

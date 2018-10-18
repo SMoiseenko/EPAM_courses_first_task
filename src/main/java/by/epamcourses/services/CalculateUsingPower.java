@@ -1,20 +1,18 @@
 package by.epamcourses.services;
 
-import by.epamcourses.home_appliances.HomeAppliances;
+import java.util.ArrayList;
+
+import by.epamcourses.data.HomeAppliances;
 
 public class CalculateUsingPower {
 
-    public static void calculateUsingPower() {
+    public int calculateUsingPower(ArrayList<HomeAppliances> homeAppliances) {
 	int powCons = 0;
-	for (HomeAppliances aList : DeepCollectionCopy.switchListCopy) {
-	    if (aList.getPowerStatus().equals("ON")) {
+	for (HomeAppliances aList : homeAppliances) {
+	    if (aList.getPowerStatus() == true) {
 		powCons += aList.getPowerСonsumption();
 	    }
 	}
-	if (powCons != 0) {
-	    System.out.println("Total power consumption of all switched ON appliance(s) = " + powCons + " W.\n");
-	} else {
-	    System.out.println("All apliances switches OFF. No any power consumption.\n");
-	}
+	return powCons;
     }
 }

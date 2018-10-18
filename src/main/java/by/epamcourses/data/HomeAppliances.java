@@ -1,10 +1,25 @@
-package by.epamcourses.home_appliances;
+package by.epamcourses.data;
 
 public abstract class HomeAppliances implements Comparable<HomeAppliances>, Cloneable {
     protected String brand;
     protected String model;
     protected int powerСonsumption;
     protected boolean powerStatus = false;
+
+    public HomeAppliances(String brand, String model, int powerСonsumption) {
+	if (brand.length() < 2) {
+	    throw new IllegalArgumentException("Brand must consist minimum two characters.");
+	}
+	this.brand = brand;
+	if (brand.length() < 2) {
+	    throw new IllegalArgumentException("Brand must consist minimum two characters.");
+	}
+	this.model = model;
+	if (powerСonsumption <= 0) {
+	    throw new IllegalArgumentException("Power consumption must be higher than 0 Watt.");
+	}
+	this.powerСonsumption = powerСonsumption;
+    }
 
     public String getModel() {
 	return model;
@@ -26,6 +41,14 @@ public abstract class HomeAppliances implements Comparable<HomeAppliances>, Clon
 	return (powerСonsumption - pow.getPowerСonsumption());
     }
 
+    public boolean getPowerStatus() {
+	return powerStatus;
+    }
+
+    public void setPowerStatus(boolean set) {
+	powerStatus = set;
+    }
+
     @Override
     public HomeAppliances clone() {
 	HomeAppliances clone = null;
@@ -35,6 +58,11 @@ public abstract class HomeAppliances implements Comparable<HomeAppliances>, Clon
 	    throw new RuntimeException(e);
 	}
 	return clone;
+    }
+
+    @Override
+    public String toString() {
+	return " \"" + brand + " - " + model + "\", " + powerСonsumption + " W. ";
     }
 
 }
