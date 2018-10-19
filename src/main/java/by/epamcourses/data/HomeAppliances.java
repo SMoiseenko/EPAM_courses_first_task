@@ -65,4 +65,41 @@ public abstract class HomeAppliances implements Comparable<HomeAppliances>, Clon
 	return " \"" + brand + " - " + model + "\", " + powerСonsumption + " W. ";
     }
 
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((brand == null) ? 0 : brand.hashCode());
+	result = prime * result + ((model == null) ? 0 : model.hashCode());
+	result = prime * result + (powerStatus ? 1231 : 1237);
+	result = prime * result + powerСonsumption;
+	return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj)
+	    return true;
+	if (obj == null)
+	    return false;
+	if (!(obj instanceof HomeAppliances))
+	    return false;
+	HomeAppliances other = (HomeAppliances) obj;
+	if (brand == null) {
+	    if (other.brand != null)
+		return false;
+	} else if (!brand.equals(other.brand))
+	    return false;
+	if (model == null) {
+	    if (other.model != null)
+		return false;
+	} else if (!model.equals(other.model))
+	    return false;
+	if (powerStatus != other.powerStatus)
+	    return false;
+	if (powerСonsumption != other.powerСonsumption)
+	    return false;
+	return true;
+    }
+
 }

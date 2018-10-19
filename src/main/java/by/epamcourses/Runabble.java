@@ -27,7 +27,7 @@ public class Runabble {
 	Runabble startHere = new Runabble();
 	ArrayList<HomeAppliances> flatList = startHere.initArrayList();
 	ArrayList<HomeAppliances> swOn;
-	ArrayList<HomeAppliances> powCalc;
+	// ArrayList<HomeAppliances> powCalc;
 
 	for (HomeAppliances dev : flatList) {
 	    System.out.println(dev);
