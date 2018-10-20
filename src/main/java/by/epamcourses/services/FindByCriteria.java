@@ -1,23 +1,25 @@
 package by.epamcourses.services;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import by.epamcourses.entity.HomeAppliances;
 
 public class FindByCriteria {
 
     public ArrayList<HomeAppliances> findByPower(ArrayList<HomeAppliances> findInME, int from, int till) {
-	ArrayList<HomeAppliances> findedByPowerList = new ArrayList<HomeAppliances>();
+	ArrayList<HomeAppliances> findedByPowerList = new ArrayList<>();
 	for (HomeAppliances isIOk : findInME) {
 	    if (isIOk.getPowerСonsumption() >= from && (isIOk.getPowerСonsumption() <= till)) {
 		findedByPowerList.add(isIOk);
 	    }
 	}
+	Collections.sort(findedByPowerList);
 	return findedByPowerList;
     }
 
     public ArrayList<HomeAppliances> findByName(ArrayList<HomeAppliances> findInME, String name) {
-	ArrayList<HomeAppliances> findedByNameList = new ArrayList<HomeAppliances>();
+	ArrayList<HomeAppliances> findedByNameList = new ArrayList<>();
 	for (HomeAppliances isIOk : findInME) {
 	    if (isIOk.getName().equalsIgnoreCase(name)) {
 		findedByNameList.add(isIOk);

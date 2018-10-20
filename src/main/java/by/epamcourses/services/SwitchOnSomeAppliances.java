@@ -6,6 +6,9 @@ import org.apache.log4j.Logger;
 
 import by.epamcourses.entity.HomeAppliances;
 
+/**
+ * Method to switch on any appliances
+ */
 public class SwitchOnSomeAppliances {
 
     final static Logger logger = Logger.getLogger(SwitchOnSomeAppliances.class);

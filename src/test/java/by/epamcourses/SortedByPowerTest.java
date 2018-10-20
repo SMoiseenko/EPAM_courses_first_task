@@ -29,9 +29,7 @@ public class SortedByPowerTest {
 
     @BeforeMethod
     public void beforeMethod() {
-	InitForTest newInit = new InitForTest();
-	initList = newInit.getAvailableAppliances();
-
+	initList = new InitForTest().getAvailableAppliances();
 	expectedList.add(new Smartphone("Nokia", "3310", 3));
 	expectedList.add(new Smartphone("Iphone", "Xs", 18));
 	expectedList.add(new WiFiRouter("Xiaomi", "Mi Router 3G", 25));
@@ -52,7 +50,6 @@ public class SortedByPowerTest {
 	expectedList.add(new Kettle("Bosch", "TWK3A011", 2400));
 	expectedList.add(new Cooker("GEFEST", "5140-02", 3500));
 	expectedList.add(new Cooker("Hansa", "FCEB53000", 5300));
-
     }
 
     @Test
@@ -64,5 +61,4 @@ public class SortedByPowerTest {
 	// THEN
 	Assert.assertEquals(resultList, expectedList);
     }
-
 }

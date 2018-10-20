@@ -1,6 +1,22 @@
 package by.epamcourses.entity;
 
+import by.epamcourses.entity.big_appliances.BigAppliance;
+import by.epamcourses.entity.consumer_electronics.ConsumerElectronics;
+import by.epamcourses.entity.small_appliances.SmallAppliance;
+
+/**
+ * The {@code HomeAppliances} is parent class for different types of home
+ * appliances. Implements interface {@link Comparable} and realisation of
+ * {@code compareTo} by {@code powerConsumption} field.
+ * 
+ * @author Sergei Moiseenko
+ * @see BigAppliance
+ * @see SmallAppliance
+ * @see ConsumerElectronics
+ */
+
 public abstract class HomeAppliances implements Comparable<HomeAppliances>, Cloneable {
+
     protected String brand;
     protected String model;
     protected int powerСonsumption;

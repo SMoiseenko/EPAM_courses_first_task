@@ -13,25 +13,24 @@ import by.epamcourses.entity.consumer_electronics.Smartphone;
 import by.epamcourses.entity.small_appliances.Сhandelier;
 import by.epamcourses.services.SwitchOnSomeAppliances;
 
+/**
+ * Unit test for {@link SwitchOnSomeAppliances.swichedOn} method.
+ */
 public class SwicthOnSomeAppliancesTest {
 
     public ArrayList<HomeAppliances> initList = new ArrayList<>();
     public ArrayList<HomeAppliances> expectedList = new ArrayList<>();
-
     int[] switchOnThese = { 7, 11, 30, 13, 2, 128, -500 };
 
     @BeforeMethod
     public void beforeMethod() {
-
+	initList = new InitForTest().getAvailableAppliances();
 	expectedList.add(new Сhandelier("Feron", "AL5000", 60));
 	expectedList.add(new Laptop("HP", "Pavilion DV6 3040er", 120));
 	expectedList.add(new Smartphone("Nokia", "3310", 3));
 	expectedList.add(new Cooker("GEFEST", "5140-02", 3500));
 	for (HomeAppliances swOn : expectedList) {
 	    swOn.setPowerStatus(true);
-
-	    InitForTest newInit = new InitForTest();
-	    initList = newInit.getAvailableAppliances();
 	}
     }
 
@@ -44,5 +43,4 @@ public class SwicthOnSomeAppliancesTest {
 	// THEN
 	Assert.assertEquals(resultList, expectedList);
     }
-
 }

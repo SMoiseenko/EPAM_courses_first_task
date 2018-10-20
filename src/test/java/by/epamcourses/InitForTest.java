@@ -18,6 +18,7 @@ import by.epamcourses.entity.small_appliances.VacuumCleaner;
 import by.epamcourses.entity.small_appliances.Сhandelier;
 
 public class InitForTest {
+
     private ArrayList<HomeAppliances> availableAppliances = new ArrayList<>();
 
     public InitForTest() {
@@ -46,5 +47,4 @@ public class InitForTest {
     public ArrayList<HomeAppliances> getAvailableAppliances() {
 	return availableAppliances;
     }
-
 }

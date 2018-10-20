@@ -16,10 +16,8 @@ public class CalculateUsingPowerTest {
 
     @BeforeMethod
     public void beforeMethod() {
+	initList = new InitForTest().getAvailableAppliances();
 	expectedResult = 2100 + 150 + 60 + 2400 + 900 + 1000 + 120 + 18 + 3 + 30;
-
-	InitForTest newInit = new InitForTest();
-	initList = newInit.getAvailableAppliances();
 	for (int i = 5; i < initList.size() - 5; ++i) {
 	    initList.get(i).setPowerStatus(true);
 	}

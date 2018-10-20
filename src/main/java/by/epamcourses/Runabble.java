@@ -25,46 +25,40 @@ public class Runabble {
 
     public static void main(String[] args) {
 
-	Runabble startHere = new Runabble();
-
-	ArrayList<HomeAppliances> flatList = startHere.initArrayList();
-	ArrayList<HomeAppliances> swOn;
-	ArrayList<HomeAppliances> sortedList;
-
+	// print appliance list
 	System.out.println("*******************************");
-	System.out.println(flatList);
+	System.out.println(new Runabble().initArrayList());
 	System.out.println("*******************************");
 
+	// print switched on lists
 	System.out.println("*******************************");
 	int[] sw = { 0, 1, 30, 19, 18, 128, -500 };
 	SwitchOnSomeAppliances switchMe = new SwitchOnSomeAppliances();
-	swOn = switchMe.swichedOn(flatList, sw);
-	System.out.println(swOn);
+	System.out.println(switchMe.swichedOn(new Runabble().initArrayList(), sw));
 	System.out.println("*******************************");
 
+	// calc swithed appliances power consumption and print it
 	System.out.println("*******************************");
 	CalculateUsingPower calcMe = new CalculateUsingPower();
-	System.out.println(calcMe.calculateUsingPower(swOn) + " W");
+	System.out.println(calcMe.calculateUsingPower(switchMe.swichedOn(new Runabble().initArrayList(), sw)) + " W");
 	System.out.println("*******************************");
 
+	// sorted list and printed it
 	System.out.println("*******************************");
 	SortedByPower sortMe = new SortedByPower();
-	sortedList = startHere.initArrayList();
-	sortMe.sortedByPower(sortedList);
-	System.out.println(sortedList);
+	System.out.println(sortMe.sortedByPower(new Runabble().initArrayList()));
 	System.out.println("*******************************");
 
+	// find with power consumtion from to till
 	System.out.println("*******************************");
 	FindByCriteria finderPower = new FindByCriteria();
-	ArrayList<HomeAppliances> findedPowerToConsole = new ArrayList<HomeAppliances>();
-	findedPowerToConsole = finderPower.findByPower(flatList, 0, 1000);
-	System.out.println(findedPowerToConsole);
+	System.out.println(finderPower.findByPower(new Runabble().initArrayList(), 100, 1000));
 	System.out.println("*******************************");
 
+	// find by name and print it
+	System.out.println("*******************************");
 	FindByCriteria finderName = new FindByCriteria();
-	ArrayList<HomeAppliances> findedNameToConsole = new ArrayList<>();
-	findedNameToConsole = finderName.findByName(new Runabble().initArrayList(), "FRIDGE");
-	System.out.println(findedNameToConsole);
+	System.out.println(finderName.findByName(new Runabble().initArrayList(), "FRIDGE"));
 	System.out.println("*******************************");
 
     }
