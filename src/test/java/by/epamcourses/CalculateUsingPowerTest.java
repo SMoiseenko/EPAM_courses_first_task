@@ -6,30 +6,32 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import by.epamcourses.data.HomeAppliances;
+import by.epamcourses.entity.HomeAppliances;
 import by.epamcourses.services.CalculateUsingPower;
 
 public class CalculateUsingPowerTest {
 
-    public ArrayList<HomeAppliances> testList = new ArrayList<>();
-    public int rightResult;
+    public ArrayList<HomeAppliances> initList = new ArrayList<>();
+    public int expectedResult;
 
     @BeforeMethod
-    public void initTest() {
-	rightResult = 2100 + 150 + 60 + 2400 + 900 + 1000 + 120 + 18 + 3 + 30;
+    public void beforeMethod() {
+	expectedResult = 2100 + 150 + 60 + 2400 + 900 + 1000 + 120 + 18 + 3 + 30;
 
-	testList = InitForTest.initArrayList();
-
-	for (int i = 5; i < testList.size() - 5; ++i) {
-	    testList.get(i).setPowerStatus(true);
+	InitForTest newInit = new InitForTest();
+	initList = newInit.getAvailableAppliances();
+	for (int i = 5; i < initList.size() - 5; ++i) {
+	    initList.get(i).setPowerStatus(true);
 	}
     }
 
     @Test
     public void calculateUsingPowerTest() {
-
-	int result = CalculateUsingPower.calculateUsingPower(testList);
-
-	Assert.assertEquals(rightResult, result);
+	// GIVEN
+	CalculateUsingPower testedMethod = new CalculateUsingPower();
+	// WHEN
+	int result = testedMethod.calculateUsingPower(initList);
+	// THEN
+	Assert.assertEquals(expectedResult, result);
     }
 }

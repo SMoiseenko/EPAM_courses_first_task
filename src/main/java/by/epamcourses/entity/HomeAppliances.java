@@ -1,4 +1,4 @@
-package by.epamcourses.data;
+package by.epamcourses.entity;
 
 public abstract class HomeAppliances implements Comparable<HomeAppliances>, Cloneable {
     protected String brand;
@@ -62,7 +62,7 @@ public abstract class HomeAppliances implements Comparable<HomeAppliances>, Clon
 
     @Override
     public String toString() {
-	return " \"" + brand + " - " + model + "\", " + powerСonsumption + " W. ";
+	return " " + brand + " - " + model + "\", " + powerСonsumption + " W. ";
     }
 
     @Override

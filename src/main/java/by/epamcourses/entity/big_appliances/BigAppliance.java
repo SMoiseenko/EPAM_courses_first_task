@@ -1,11 +1,11 @@
-package by.epamcourses.data.small_appliances;
+package by.epamcourses.entity.big_appliances;
 
-import by.epamcourses.data.HomeAppliances;
+import by.epamcourses.entity.HomeAppliances;
 
-public abstract class SmallAppliance extends HomeAppliances {
-    static final String TYPE = "Small appliance";
+public abstract class BigAppliance extends HomeAppliances {
+    static final String TYPE = "Big appliance";
 
-    public SmallAppliance(String model, String brand, int powerConsumption) {
+    public BigAppliance(String model, String brand, int powerConsumption) {
 	super(model, brand, powerConsumption);
     }
 
@@ -21,4 +21,5 @@ public abstract class SmallAppliance extends HomeAppliances {
 	    return super.toString() + "(" + TYPE + ")" + " --- OFF";
 	}
     }
+
 }

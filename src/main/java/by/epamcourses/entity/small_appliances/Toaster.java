@@ -1,4 +1,4 @@
-package by.epamcourses.data.small_appliances;
+package by.epamcourses.entity.small_appliances;
 
 public class Toaster extends SmallAppliance {
     static final String NAME = "Toaster";
@@ -13,6 +13,6 @@ public class Toaster extends SmallAppliance {
 
     @Override
     public String toString() {
-	return NAME + super.toString();
+	return "\n " + NAME + super.toString();
     }
 }

@@ -1,4 +1,4 @@
-package by.epamcourses.data.consumer_electronics;
+package by.epamcourses.entity.consumer_electronics;
 
 public class WiFiRouter extends ConsumerElectronics {
     static final String NAME = "WiFi Router";
@@ -13,6 +13,6 @@ public class WiFiRouter extends ConsumerElectronics {
 
     @Override
     public String toString() {
-	return NAME + super.toString();
+	return "\n " + NAME + super.toString();
     }
 }

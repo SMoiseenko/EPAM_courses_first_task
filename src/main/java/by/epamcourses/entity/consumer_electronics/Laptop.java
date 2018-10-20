@@ -1,4 +1,4 @@
-package by.epamcourses.data.consumer_electronics;
+package by.epamcourses.entity.consumer_electronics;
 
 public class Laptop extends ConsumerElectronics {
     static final String NAME = "Laptop";
@@ -13,6 +13,6 @@ public class Laptop extends ConsumerElectronics {
 
     @Override
     public String toString() {
-	return NAME + super.toString();
+	return "\n " + NAME + super.toString();
     }
 }

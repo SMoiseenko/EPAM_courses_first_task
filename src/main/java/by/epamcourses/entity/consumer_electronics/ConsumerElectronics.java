@@ -1,6 +1,6 @@
-package by.epamcourses.data.consumer_electronics;
+package by.epamcourses.entity.consumer_electronics;
 
-import by.epamcourses.data.HomeAppliances;
+import by.epamcourses.entity.HomeAppliances;
 
 public abstract class ConsumerElectronics extends HomeAppliances {
     static final String TYPE = "Consumer electronics";

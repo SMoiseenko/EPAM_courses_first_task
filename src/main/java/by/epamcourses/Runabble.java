@@ -2,21 +2,22 @@ package by.epamcourses;
 
 import java.util.ArrayList;
 
-import by.epamcourses.data.HomeAppliances;
-import by.epamcourses.data.big_appliances.Cooker;
-import by.epamcourses.data.big_appliances.Fridge;
-import by.epamcourses.data.big_appliances.RangeHood;
-import by.epamcourses.data.big_appliances.WashingMachine;
-import by.epamcourses.data.consumer_electronics.Laptop;
-import by.epamcourses.data.consumer_electronics.Smartphone;
-import by.epamcourses.data.consumer_electronics.SoundBar;
-import by.epamcourses.data.consumer_electronics.Television;
-import by.epamcourses.data.consumer_electronics.WiFiRouter;
-import by.epamcourses.data.small_appliances.Kettle;
-import by.epamcourses.data.small_appliances.Toaster;
-import by.epamcourses.data.small_appliances.VacuumCleaner;
-import by.epamcourses.data.small_appliances.Сhandelier;
+import by.epamcourses.entity.HomeAppliances;
+import by.epamcourses.entity.big_appliances.Cooker;
+import by.epamcourses.entity.big_appliances.Fridge;
+import by.epamcourses.entity.big_appliances.RangeHood;
+import by.epamcourses.entity.big_appliances.WashingMachine;
+import by.epamcourses.entity.consumer_electronics.Laptop;
+import by.epamcourses.entity.consumer_electronics.Smartphone;
+import by.epamcourses.entity.consumer_electronics.SoundBar;
+import by.epamcourses.entity.consumer_electronics.Television;
+import by.epamcourses.entity.consumer_electronics.WiFiRouter;
+import by.epamcourses.entity.small_appliances.Kettle;
+import by.epamcourses.entity.small_appliances.Toaster;
+import by.epamcourses.entity.small_appliances.VacuumCleaner;
+import by.epamcourses.entity.small_appliances.Сhandelier;
 import by.epamcourses.services.CalculateUsingPower;
+import by.epamcourses.services.FindByCriteria;
 import by.epamcourses.services.SortedByPower;
 import by.epamcourses.services.SwitchOnSomeAppliances;;
 
@@ -25,35 +26,45 @@ public class Runabble {
     public static void main(String[] args) {
 
 	Runabble startHere = new Runabble();
+
 	ArrayList<HomeAppliances> flatList = startHere.initArrayList();
 	ArrayList<HomeAppliances> swOn;
-	// ArrayList<HomeAppliances> powCalc;
+	ArrayList<HomeAppliances> sortedList;
 
-	for (HomeAppliances dev : flatList) {
-	    System.out.println(dev);
-	}
+	System.out.println("*******************************");
+	System.out.println(flatList);
 	System.out.println("*******************************");
 
+	System.out.println("*******************************");
 	int[] sw = { 0, 1, 30, 19, 18, 128, -500 };
-	swOn = SwitchOnSomeAppliances.swichedOn(flatList, sw);
-	for (HomeAppliances dev : swOn) {
-	    System.out.println(dev);
-	}
-	System.out.println("*******************************");
-	for (HomeAppliances dev : swOn) {
-	    System.out.println(dev);
-	}
-
+	SwitchOnSomeAppliances switchMe = new SwitchOnSomeAppliances();
+	swOn = switchMe.swichedOn(flatList, sw);
+	System.out.println(swOn);
 	System.out.println("*******************************");
 
-	System.out.println(CalculateUsingPower.calculateUsingPower(swOn) + " W");
-
+	System.out.println("*******************************");
+	CalculateUsingPower calcMe = new CalculateUsingPower();
+	System.out.println(calcMe.calculateUsingPower(swOn) + " W");
 	System.out.println("*******************************");
 
-	for (HomeAppliances dev : SortedByPower.sortedByPower(flatList)) {
-	    System.out.println(dev);
-	}
+	System.out.println("*******************************");
+	SortedByPower sortMe = new SortedByPower();
+	sortedList = startHere.initArrayList();
+	sortMe.sortedByPower(sortedList);
+	System.out.println(sortedList);
+	System.out.println("*******************************");
 
+	System.out.println("*******************************");
+	FindByCriteria finderPower = new FindByCriteria();
+	ArrayList<HomeAppliances> findedPowerToConsole = new ArrayList<HomeAppliances>();
+	findedPowerToConsole = finderPower.findByPower(flatList, 0, 1000);
+	System.out.println(findedPowerToConsole);
+	System.out.println("*******************************");
+
+	FindByCriteria finderName = new FindByCriteria();
+	ArrayList<HomeAppliances> findedNameToConsole = new ArrayList<>();
+	findedNameToConsole = finderName.findByName(new Runabble().initArrayList(), "FRIDGE");
+	System.out.println(findedNameToConsole);
 	System.out.println("*******************************");
 
     }
