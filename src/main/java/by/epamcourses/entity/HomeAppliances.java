@@ -5,9 +5,10 @@ import by.epamcourses.entity.consumer_electronics.ConsumerElectronics;
 import by.epamcourses.entity.small_appliances.SmallAppliance;
 
 /**
- * The {@code HomeAppliances} is parent class for different types of home
- * appliances. Implements interface {@link Comparable} and realisation of
- * {@code compareTo} by {@code powerConsumption} field.
+ * The {@code HomeAppliances} is abstract parent class for different types of
+ * home appliances. Contain common fields and methods to get their value.
+ * Implements interface {@link Comparable} and override <i>compareTo</i> method
+ * to sort in collection by <b>powerConsumption</b> field.
  * 
  * @author Sergei Moiseenko
  * @see BigAppliance
@@ -15,22 +16,45 @@ import by.epamcourses.entity.small_appliances.SmallAppliance;
  * @see ConsumerElectronics
  */
 
-public abstract class HomeAppliances implements Comparable<HomeAppliances>, Cloneable {
-
+public abstract class HomeAppliances implements Comparable<HomeAppliances> {
+    /**
+     * Field contain name of producer (brand). Fill only by constructor.
+     */
     protected String brand;
+    /**
+     * Field contain model of appliance. Fill only by constructor.
+     */
     protected String model;
+    /**
+     * Field contain power consumption of appliance. Fill only by constructor.
+     */
     protected int powerСonsumption;
+    /**
+     * Field contain information is appliance turn ON or OFF. By default - OFF
+     */
     protected boolean powerStatus = false;
 
+    /**
+     * Default and only one constructor for {@code HomeAppliances} to fill main
+     * fields. Can throw {@link IllegalArgumentException} if fields <b>brand</b> or
+     * <b>model</b> consist less that 2 characters or <b>powerConsumption</b> are
+     * negative. Can't change this fields after create instance of real entity.
+     * 
+     * @param brand
+     * @param model
+     * @param powerСonsumption
+     */
     public HomeAppliances(String brand, String model, int powerСonsumption) {
 	if (brand.length() < 2) {
 	    throw new IllegalArgumentException("Brand must consist minimum two characters.");
 	}
 	this.brand = brand;
-	if (brand.length() < 2) {
-	    throw new IllegalArgumentException("Brand must consist minimum two characters.");
+
+	if (model.length() < 2) {
+	    throw new IllegalArgumentException("Model must consist minimum two characters.");
 	}
 	this.model = model;
+
 	if (powerСonsumption <= 0) {
 	    throw new IllegalArgumentException("Power consumption must be higher than 0 Watt.");
 	}
@@ -49,14 +73,6 @@ public abstract class HomeAppliances implements Comparable<HomeAppliances>, Clon
 	return powerСonsumption;
     }
 
-    public abstract String getType();
-
-    public abstract String getName();
-
-    public int compareTo(HomeAppliances pow) {
-	return (powerСonsumption - pow.getPowerСonsumption());
-    }
-
     public boolean isPowerStatus() {
 	return powerStatus;
     }
@@ -65,15 +81,16 @@ public abstract class HomeAppliances implements Comparable<HomeAppliances>, Clon
 	powerStatus = set;
     }
 
-    @Override
-    public HomeAppliances clone() {
-	HomeAppliances clone = null;
-	try {
-	    clone = (HomeAppliances) super.clone();
-	} catch (CloneNotSupportedException e) {
-	    throw new RuntimeException(e);
-	}
-	return clone;
+    public abstract String getType();
+
+    public abstract String getName();
+
+    /**
+     * This method add possibility to sort collection of {@link HomeAppliances} type
+     * by {@code powerConsunption} field.
+     */
+    public int compareTo(HomeAppliances pow) {
+	return (powerСonsumption - pow.getPowerСonsumption());
     }
 
     @Override
@@ -117,5 +134,4 @@ public abstract class HomeAppliances implements Comparable<HomeAppliances>, Clon
 	    return false;
 	return true;
     }
-
 }

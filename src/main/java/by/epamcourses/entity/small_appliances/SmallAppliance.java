@@ -2,6 +2,18 @@ package by.epamcourses.entity.small_appliances;
 
 import by.epamcourses.entity.HomeAppliances;
 
+/**
+ * The {@code SmallAppliance} intermediate abstract class between
+ * {@link HomeAppliances} and real appliances. Add static final field
+ * <b>TYPE</b> to have possibility classified type as {@code SmallAppliance}.
+ * 
+ * @author Sergei Moiseenko
+ * @see Kettle
+ * @see Toaster
+ * @see VacuumCleaner
+ * @see Сhandelier
+ * @see HomeAppliances
+ */
 public abstract class SmallAppliance extends HomeAppliances {
     static final String TYPE = "Small appliance";
 
