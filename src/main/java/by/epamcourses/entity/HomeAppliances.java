@@ -95,7 +95,7 @@ public abstract class HomeAppliances implements Comparable<HomeAppliances> {
 
     @Override
     public String toString() {
-	return " " + brand + " - " + model + "\", " + powerСonsumption + " W. ";
+	return " \"" + brand + " - " + model + "\", " + powerСonsumption + " W. ";
     }
 
     @Override
