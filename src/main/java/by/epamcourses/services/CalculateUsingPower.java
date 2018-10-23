@@ -21,7 +21,7 @@ import by.epamcourses.entity.HomeAppliances;
  */
 public class CalculateUsingPower {
 
-    final static Logger logger = Logger.getLogger(CalculateUsingPower.class);
+   private final static Logger logger = Logger.getLogger(CalculateUsingPower.class);
 
     public int calculateUsingPower(ArrayList<HomeAppliances> homeAppliances) {
 	if (logger.isInfoEnabled()) {

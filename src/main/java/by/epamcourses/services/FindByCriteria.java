@@ -31,7 +31,7 @@ import by.epamcourses.entity.HomeAppliances;
  */
 public class FindByCriteria {
 
-    final static Logger logger = Logger.getLogger(FindByCriteria.class);
+    private final static Logger logger = Logger.getLogger(FindByCriteria.class);
 
     public ArrayList<HomeAppliances> findByPower(ArrayList<HomeAppliances> findInME, int from, int till) {
 	if (logger.isInfoEnabled()) {

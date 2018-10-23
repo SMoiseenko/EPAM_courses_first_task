@@ -20,7 +20,7 @@ import by.epamcourses.entity.HomeAppliances;
  * @see HomeAppliances
  */
 public class SortedByPower {
-    final static Logger logger = Logger.getLogger(SortedByPower.class);
+ private   final static Logger logger = Logger.getLogger(SortedByPower.class);
 
     public ArrayList<HomeAppliances> sortedByPower(ArrayList<HomeAppliances> sortMe) {
 	if (logger.isInfoEnabled()) {

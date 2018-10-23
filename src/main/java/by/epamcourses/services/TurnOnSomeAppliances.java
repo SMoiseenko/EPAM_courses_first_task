@@ -24,7 +24,7 @@ import by.epamcourses.entity.HomeAppliances;
  */
 public class TurnOnSomeAppliances {
 
-    final static Logger logger = Logger.getLogger(TurnOnSomeAppliances.class);
+    private final static Logger logger = Logger.getLogger(TurnOnSomeAppliances.class);
 
     public ArrayList<HomeAppliances> turnOn(ArrayList<HomeAppliances> flatAppliances, int[] switchThis) {
 	ArrayList<HomeAppliances> turnOnApplianceList = new ArrayList<>();
